@@ -72,10 +72,10 @@ class PhoneNumberUtil {
     required String phoneNumber,
     required String isoCode,
   }) async {
-    Map<dynamic, dynamic> result = await (_channel.invokeMethod('getRegionInfo', {
+    Map<dynamic, dynamic> result = await _channel.invokeMethod('getRegionInfo', {
       'phone_number': phoneNumber,
       'iso_code': isoCode,
-    }) as FutureOr<Map<dynamic, dynamic>>);
+    });
 
     return RegionInfo(
       regionPrefix: result['regionCode'],
